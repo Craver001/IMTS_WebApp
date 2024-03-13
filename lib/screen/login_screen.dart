@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mgd_employee_attendance/screen/Registration2.dart';
+
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -83,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
         
          const SizedBox(height: 30,),
 
-         //textButton
+         //textButton login &create account
 
          Row(
               mainAxisAlignment: MainAxisAlignment.center, // Center vertically
@@ -116,7 +118,9 @@ class _LoginScreenState extends State<LoginScreen> {
               width: 170,
               child:    //create textButton
                 TextButton(
-                  onPressed:(){},
+                  onPressed:(){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const RegistrationUi(),));
+                  },
                   style: TextButton.styleFrom(
                         backgroundColor: Colors.blue,
                         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
@@ -135,6 +139,7 @@ class _LoginScreenState extends State<LoginScreen> {
           ],
          ),
 
+                    //bottom design
       
         const SizedBox(height: 50,),
       
