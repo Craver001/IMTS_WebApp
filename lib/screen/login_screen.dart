@@ -128,7 +128,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 borderRadius: BorderRadius.circular(8))
                         ),
                   child: const Text(
-                               "Create Account",
+                               "Signup",
                                 style: TextStyle(
                                 fontSize: 18,
                                color: Colors.white,

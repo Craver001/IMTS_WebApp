@@ -50,16 +50,22 @@ class _RegistrationUiState extends State<RegistrationUi> {
           child: Column(
             children: [
               //user name
-              TextField(
+              SizedBox(
+                width: 450,
+                child: TextField(
               decoration: const InputDecoration(
                   labelText: "Full Name",
                   prefixIcon: Icon(Icons.person),
                   border: OutlineInputBorder()),
               controller: _fullname,
             ),
+              ),
             //user email
              const SizedBox(height: 5,),
-            TextField(
+           
+           SizedBox(
+            width: 450,
+            child:  TextField(
               decoration: const InputDecoration(
                 labelText: "Email",
                 prefixIcon: Icon(Icons.email),
@@ -68,9 +74,15 @@ class _RegistrationUiState extends State<RegistrationUi> {
               controller: _userEmail,
 
             ),
+
+           ),
+
               const SizedBox(height: 5,),
             //UserPAssword 1
-            TextField(
+
+            Container(
+              width: 450,
+              child:  TextField(
               decoration: InputDecoration(
                 labelText: "Password",
                 prefixIcon: const Icon(Icons.lock),
@@ -89,27 +101,62 @@ class _RegistrationUiState extends State<RegistrationUi> {
               ),
 
                  controller: _userPassword1,
-                obscureText: _passwordVisible1
+                obscureText: _passwordVisible
 
             ),
-              const SizedBox(height: 5,),
-            //verify password
-            TextField(
-                decoration: InputDecoration(
-                    labelText: "Confirm Password",
-                    prefixIcon: const Icon(Icons.lock),
-                    suffixIcon: IconButton(
+            ),
+
+                const SizedBox(height: 5,),
+            Container(
+              width: 450,
+              child: TextField(
+              decoration: InputDecoration(
+                labelText: "Password",
+                prefixIcon: const Icon(Icons.lock),
+                 suffixIcon: IconButton(
                       icon: Icon(
-                          _passwordVisible ? Icons.visibility : Icons.visibility_off),
+                          _passwordVisible1 ? Icons.visibility : Icons.visibility_off),
                       onPressed: () {
                         setState(() {
                           _passwordVisible = !_passwordVisible;
                         });
                       },
                     ),
-                    border: const OutlineInputBorder()),
-                controller: _userPassword2,
-                obscureText: _passwordVisible),
+
+                border:const OutlineInputBorder(),
+              
+              ),
+
+                 controller: _userPassword1,
+                obscureText: _passwordVisible
+              )
+
+            ),
+
+            const SizedBox(height: 30,),
+
+                SizedBox(
+              width: 170,
+              child:    //create textButton
+                TextButton(
+                  onPressed:(){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const RegistrationUi(),));
+                  },
+                  style: TextButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+                        shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8))
+                        ),
+                  child: const Text(
+                               "create account",
+                                style: TextStyle(
+                                fontSize: 18,
+                               color: Colors.white,
+                              fontWeight: FontWeight.bold),
+                  ),),
+            )
+
 
             ],
           )

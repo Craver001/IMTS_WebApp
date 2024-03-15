@@ -106,7 +106,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     border: const OutlineInputBorder()),
                 controller: _userPassword2,
                 obscureText: _passwordVisible),
-          )
+          ),
+
+          const SizedBox(height: 30,),
+
+          
+
 
 
 
